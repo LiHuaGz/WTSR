@@ -1,0 +1,14 @@
+wget http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_train_HR.zip /hy-tmp/data
+wget http://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip /hy-tmp/data
+
+curl -L https://download.gpushare.com/download/gpushare-cli-linux -o /usr/local/bin/gpushare-cli
+chmod u+x /usr/local/bin/gpushare-cli
+gpushare-cli login -u 19050634056 -p 69122770810s
+
+# 百度云
+gpushare-cli baidu down /DIV2K/DIV2K_train_HR.zip /hy-tmp/paper_code/data
+gpushare-cli baidu down /DIV2K/DIV2K_valid_HR.zip /hy-tmp/paper_code/data
+
+# 阿里云
+gpushare-cli ali down /DIV2K_train_HR.zip /hy-tmp/paper_code/data
+gpushare-cli ali down /DIV2K_valid_HR.zip /hy-tmp/paper_code/data
