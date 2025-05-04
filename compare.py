@@ -12,7 +12,7 @@ from dataloaders import MyImageDataset
 from model import SRnet_dtcwt
 from utils.utils import cal_psnr, cal_ssim, set_seed, cv2_lanczos_interpolate
 
-def interference(opt, saveimg=True):
+def inference(opt, saveimg=True):
     # set seed
     set_seed(3407)
 
@@ -174,4 +174,4 @@ if __name__ == '__main__':
 
     #开始训练
     os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
-    interference(opt)
+    inference(opt)
